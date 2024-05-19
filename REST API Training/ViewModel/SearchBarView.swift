@@ -32,6 +32,12 @@ class SearchBarView: UIView {
     private let searchButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        // Установка цвета фона кнопки в близкий к голубому синий
+        button.backgroundColor = UIColor(red: 0.1, green: 0.5, blue: 1.0, alpha: 1.0)
+        // Установка цвета иконки на кнопке в розовый
+        button.tintColor = .red
+        // Установка закругления для кнопки
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -59,15 +65,21 @@ class SearchBarView: UIView {
         
         searchBar.snp.makeConstraints { make in
             make.leading.top.bottom.equalToSuperview()
-            make.trailing.equalTo(searchButton.snp.leading)
+            make.trailing.equalTo(searchButton.snp.leading).offset(-10) // Отступ между textField и кнопкой
         }
         
         searchButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.width.equalTo(50)
+            make.trailing.equalToSuperview().inset(10) // Отступ справа для кнопки
+            make.centerY.equalTo(searchBar) // Размещение кнопки по вертикали в центре textField
+            make.height.width.equalTo(40) // Высота и ширина кнопки
         }
+        
+        // Добавляем красную обводку к кнопке
+        searchButton.layer.borderWidth = 1
+        searchButton.layer.borderColor = UIColor.red.cgColor
     }
+
+
     
     private func setupActions() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
