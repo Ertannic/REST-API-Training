@@ -15,6 +15,17 @@ class SearchBarView: UIView {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search"
         searchBar.searchBarStyle = .minimal
+        // Установка цвета фона для поисковой строки в красный
+        searchBar.barTintColor = .red
+        // Установка цвета текста для поисковой строки в черный
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.textColor = .black
+            // Установка цвета обводки и закругление для textField
+            textField.backgroundColor = .white
+            textField.layer.cornerRadius = 10
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.red.cgColor
+        }
         return searchBar
     }()
     
@@ -67,4 +78,3 @@ class SearchBarView: UIView {
         viewModel?.handleSearchButtonTapped(searchText: searchText)
     }
 }
-
