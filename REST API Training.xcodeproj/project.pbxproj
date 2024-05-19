@@ -16,6 +16,8 @@
 		524B4AC62BF514D8009DC176 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 524B4AC52BF514D8009DC176 /* SnapKit */; };
 		524B4AC82BF514D8009DC176 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 524B4AC72BF514D8009DC176 /* SnapKit-Dynamic */; };
 		524B4ACB2BF514F8009DC176 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 524B4ACA2BF514F8009DC176 /* Kingfisher */; };
+		524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */; };
+		524B4AD42BFA264C009DC176 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AD32BFA264C009DC176 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		524B4AAB2BF50305009DC176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		524B4AB02BF50307009DC176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524B4AB52BF50307009DC176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "REST API Training/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
+		524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModelDelegate.swift; sourceTree = "<group>"; };
+		524B4AD32BFA264C009DC176 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		524B4ACD2BF51533009DC176 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 		524B4ACF2BF51540009DC176 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				524B4AD32BFA264C009DC176 /* SearchBarView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524B4AD42BFA264C009DC176 /* SearchBarView.swift in Sources */,
 				524B4AAC2BF50305009DC176 /* ViewController.swift in Sources */,
 				524B4AA82BF50305009DC176 /* AppDelegate.swift in Sources */,
+				524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */,
 				524B4AAA2BF50305009DC176 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
