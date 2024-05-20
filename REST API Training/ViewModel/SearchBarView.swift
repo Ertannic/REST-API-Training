@@ -90,3 +90,4 @@ class SearchBarView: UIView {
         viewModel?.handleSearchButtonTapped(searchText: searchText)
     }
 }
+

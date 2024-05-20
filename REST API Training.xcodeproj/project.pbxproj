@@ -18,6 +18,10 @@
 		524B4ACB2BF514F8009DC176 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 524B4ACA2BF514F8009DC176 /* Kingfisher */; };
 		524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */; };
 		524B4AD42BFA264C009DC176 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AD32BFA264C009DC176 /* SearchBarView.swift */; };
+		524B4ADA2BFA5C90009DC176 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AD92BFA5C90009DC176 /* Character.swift */; };
+		524B4AE32BFBAF4E009DC176 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE22BFBAF4E009DC176 /* Key.swift */; };
+		524B4AE52BFBB40C009DC176 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE42BFBB40C009DC176 /* APIResult.swift */; };
+		524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE62BFBB431009DC176 /* CharacterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		524B4AB52BF50307009DC176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "REST API Training/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
 		524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModelDelegate.swift; sourceTree = "<group>"; };
 		524B4AD32BFA264C009DC176 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		524B4AD92BFA5C90009DC176 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		524B4AE22BFBAF4E009DC176 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		524B4AE42BFBB40C009DC176 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		524B4AE62BFBB431009DC176 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,7 @@
 		524B4AA62BF50305009DC176 /* REST API Training */ = {
 			isa = PBXGroup;
 			children = (
+				524B4ADB2BFA5DEE009DC176 /* Networking */,
 				524B4AD02BF51553009DC176 /* Resources */,
 				524B4ACF2BF51540009DC176 /* ViewModel */,
 				524B4ACE2BF5153B009DC176 /* View */,
@@ -88,6 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				524B4AD12BFA25D9009DC176 /* SearchBarViewModelDelegate.swift */,
+				524B4AD92BFA5C90009DC176 /* Character.swift */,
+				524B4AE22BFBAF4E009DC176 /* Key.swift */,
+				524B4AE42BFBB40C009DC176 /* APIResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +127,14 @@
 				524B4AB02BF50307009DC176 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		524B4ADB2BFA5DEE009DC176 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				524B4AE62BFBB431009DC176 /* CharacterService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524B4AE52BFBB40C009DC176 /* APIResult.swift in Sources */,
 				524B4AD42BFA264C009DC176 /* SearchBarView.swift in Sources */,
 				524B4AAC2BF50305009DC176 /* ViewController.swift in Sources */,
+				524B4AE32BFBAF4E009DC176 /* Key.swift in Sources */,
 				524B4AA82BF50305009DC176 /* AppDelegate.swift in Sources */,
+				524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */,
 				524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */,
 				524B4AAA2BF50305009DC176 /* SceneDelegate.swift in Sources */,
+				524B4ADA2BFA5C90009DC176 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

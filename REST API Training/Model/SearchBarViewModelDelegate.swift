@@ -7,16 +7,21 @@
 
 import Foundation
 
-protocol SearchBarViewModelDelegate: AnyObject {
-    
-    func didTapSearchButton(withText searchText: String)
-    
-}
-
 class SearchBarViewModel {
-    weak var delegate: SearchBarViewModelDelegate?
+    private let characterService = CharacterService()
+    var characters: [Character] = []
     
     func handleSearchButtonTapped(searchText: String) {
-        delegate?.didTapSearchButton(withText: searchText)
+        print("Search button tapped with text: \(searchText)")
+        characterService.fetchCharacters(searchText: searchText) { result in
+            switch result {
+            case .success(let characters):
+                self.characters = characters
+            case .failure(let error):
+                print("Error fetching characters: \(error)")
+            }
+        }
     }
 }
+
+

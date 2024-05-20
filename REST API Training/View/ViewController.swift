@@ -62,15 +62,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return searchBarViewModel.characters.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Placeholder"
+        cell.textLabel?.text = searchBarViewModel.characters[indexPath.row].name // Выводим имя персонажа
         return cell
         
     }
 }
+
