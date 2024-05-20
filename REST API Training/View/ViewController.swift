@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     let searchBarView = SearchBarView()
     let searchBarViewModel = SearchBarViewModel()
     
-    // MARK: - UI
+    // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,16 +62,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return searchBarViewModel.characters.count
+        return 10
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = searchBarViewModel.characters[indexPath.row].name // Выводим имя персонажа
+        cell.textLabel?.text = "Placeholder"
         return cell
         
     }
 }
-

@@ -16,3 +16,4 @@ struct APICharacterData: Codable {
     var results: [Character]
 }
 
+

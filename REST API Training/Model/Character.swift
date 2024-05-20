@@ -16,4 +16,3 @@ struct Character: Identifiable, Codable {
 }
 
 
-
