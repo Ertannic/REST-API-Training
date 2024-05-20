@@ -8,11 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol SearchBarViewModelDelegate: AnyObject {
-    func didTapSearchButton(withText searchText: String)
-    func searchFailed()
-}
-
 class SearchBarView: UIView {
     
     // MARK: - Outlets
@@ -47,7 +42,7 @@ class SearchBarView: UIView {
     }()
     
     // MARK: - Views
-    weak var delegate: SearchBarViewModelDelegate?
+    var viewModel: SearchBarViewModel?
     
     
     // MARK: - Inits
@@ -56,6 +51,7 @@ class SearchBarView: UIView {
         
         setupUI()
         setupActions()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -83,14 +79,17 @@ class SearchBarView: UIView {
         searchButton.layer.borderColor = UIColor.red.cgColor
     }
 
+
+    
     private func setupActions() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     @objc private func searchButtonTapped() {
         guard let searchText = searchBar.text else { return }
-        delegate?.didTapSearchButton(withText: searchText)
+        viewModel?.handleSearchButtonTapped(searchText: searchText)
     }
 }
+
 
 
