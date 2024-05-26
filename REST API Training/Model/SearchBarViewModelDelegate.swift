@@ -11,19 +11,17 @@ class SearchBarViewModel {
     private let characterService = CharacterService()
     var characters: [Character] = []
     
-    func handleSearchButtonTapped(searchText: String) {
-        print(searchText)
+    func fetchCharacters(searchText: String, completion: @escaping (Result<[Character], Error>) -> Void) {
         characterService.fetchCharacters(searchText: searchText) { result in
             switch result {
             case .success(let characters):
                 self.characters = characters
-                print(characters)
+                completion(.success(characters))
             case .failure(let error):
-                print("Error fetching characters: \(error)")
+                completion(.failure(error))
             }
         }
     }
 }
-
 
 

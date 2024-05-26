@@ -43,7 +43,7 @@ class SearchBarView: UIView {
     
     // MARK: - Properties
     var viewModel = SearchBarViewModel()
-    var onSearchTextChange: ((String) -> Void)?
+    var onSearchButtonTapped: ((String) -> Void)?
     
     // MARK: - Inits
     override init(frame: CGRect) {
@@ -51,7 +51,6 @@ class SearchBarView: UIView {
         
         setupUI()
         setupActions()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -78,8 +77,6 @@ class SearchBarView: UIView {
         searchButton.layer.borderWidth = 1
         searchButton.layer.borderColor = UIColor.red.cgColor
     }
-
-
     
     private func setupActions() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
@@ -88,18 +85,19 @@ class SearchBarView: UIView {
     }
     
     @objc private func searchButtonTapped() {
-        print(searchBar.text ?? print("error"))
-        print(viewModel)
         guard let searchText = searchBar.text else { return }
-        viewModel.handleSearchButtonTapped(searchText: searchText)
+        onSearchButtonTapped?(searchText)
+        searchBar.resignFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
     }
 }
 
 extension SearchBarView: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // Вызываем замыкание onSearchTextChange при изменении текста в поисковой строке
-        onSearchTextChange?(searchText)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        onSearchButtonTapped?(searchText)
+        searchBar.resignFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
     }
 }
+
 
 

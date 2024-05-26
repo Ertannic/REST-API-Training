@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         
         setupViews()
         setupConstraints()
+        setupSearchBar()
     }
     
     private func setupViews() {
@@ -56,9 +57,12 @@ class ViewController: UIViewController {
     
     private func setupSearchBar() {
         searchBarView.viewModel = searchBarViewModel
-        searchBarView.onSearchTextChange = { [weak self] searchText in
-            self?.searchBarViewModel.handleSearchButtonTapped(searchText: searchText)
-            self?.tableView.reloadData() // Перезагрузка таблицы после изменения текста в поисковой строке
+        searchBarView.onSearchButtonTapped = { [weak self] searchText in
+            self?.searchBarViewModel.fetchCharacters(searchText: searchText) { _ in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
         }
     }
 }
@@ -78,5 +82,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
-
 

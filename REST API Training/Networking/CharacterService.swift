@@ -18,7 +18,11 @@ class CharacterService {
     func fetchCharacters(searchText: String, completion: @escaping (Result<[Character], Error>) -> Void) {
         let timestamp = "\(Date().timeIntervalSince1970)"
         let hash = MD5(data: "\(timestamp)\(privateKey)\(publicKey)")
-        let url = "\(baseURL)?ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
+        
+        // Производим URL-кодирование текста поиска
+        let searchTextEncoded = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        let url = "\(baseURL)?nameStartsWith=\(searchTextEncoded)&ts=\(timestamp)&apikey=\(publicKey)&hash=\(hash)"
         
         AF.request(url).responseDecodable(of: APIResult.self) { response in
             switch response.result {
