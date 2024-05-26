@@ -42,7 +42,7 @@ class SearchBarView: UIView {
     }()
     
     // MARK: - Views
-    var viewModel: SearchBarViewModel?
+    var viewModel = SearchBarViewModel()
     
     
     // MARK: - Inits
@@ -86,8 +86,10 @@ class SearchBarView: UIView {
     }
     
     @objc private func searchButtonTapped() {
+        print(searchBar.text)
+        print(viewModel)
         guard let searchText = searchBar.text else { return }
-        viewModel?.handleSearchButtonTapped(searchText: searchText)
+        viewModel.handleSearchButtonTapped(searchText: searchText)
     }
 }
 
