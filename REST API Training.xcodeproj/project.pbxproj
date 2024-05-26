@@ -22,6 +22,7 @@
 		524B4AE32BFBAF4E009DC176 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE22BFBAF4E009DC176 /* Key.swift */; };
 		524B4AE52BFBB40C009DC176 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE42BFBB40C009DC176 /* APIResult.swift */; };
 		524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE62BFBB431009DC176 /* CharacterService.swift */; };
+		524B4AEB2C0346FD009DC176 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		524B4AE22BFBAF4E009DC176 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		524B4AE42BFBB40C009DC176 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		524B4AE62BFBB431009DC176 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterTableViewCell.swift; path = ../../../../Desktop/CharacterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				524B4AD32BFA264C009DC176 /* SearchBarView.swift */,
+				524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				524B4AA82BF50305009DC176 /* AppDelegate.swift in Sources */,
 				524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */,
 				524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */,
+				524B4AEB2C0346FD009DC176 /* CharacterTableViewCell.swift in Sources */,
 				524B4AAA2BF50305009DC176 /* SceneDelegate.swift in Sources */,
 				524B4ADA2BFA5C90009DC176 /* Character.swift in Sources */,
 			);

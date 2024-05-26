@@ -10,10 +10,11 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    // MARK: - Outlets
+    // MARK: - Properties
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: "CharacterCell")
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     let searchBarViewModel = SearchBarViewModel()
     
     // MARK: - UI
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,16 +36,12 @@ class ViewController: UIViewController {
         setupConstraints()
     }
     
-    // MARK: - Setups
     private func setupViews() {
-        
         view.addSubview(searchBarView)
         view.addSubview(tableView)
-        
     }
     
     private func setupConstraints() {
-        
         searchBarView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview()
@@ -55,23 +53,30 @@ class ViewController: UIViewController {
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
+    
+    private func setupSearchBar() {
+        searchBarView.viewModel = searchBarViewModel
+        searchBarView.onSearchTextChange = { [weak self] searchText in
+            self?.searchBarViewModel.handleSearchButtonTapped(searchText: searchText)
+            self?.tableView.reloadData() // Перезагрузка таблицы после изменения текста в поисковой строке
+        }
+    }
 }
 
 // MARK: - Extensions
+
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return searchBarViewModel.characters.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = searchBarViewModel.characters[indexPath.row].name // Выводим имя персонажа
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as! CharacterTableViewCell
+        let character = searchBarViewModel.characters[indexPath.row]
+        cell.configure(with: character)
         return cell
-        
     }
 }
+
 

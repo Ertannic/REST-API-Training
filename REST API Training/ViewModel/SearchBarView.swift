@@ -41,9 +41,9 @@ class SearchBarView: UIView {
         return button
     }()
     
-    // MARK: - Views
+    // MARK: - Properties
     var viewModel = SearchBarViewModel()
-    
+    var onSearchTextChange: ((String) -> Void)?
     
     // MARK: - Inits
     override init(frame: CGRect) {
@@ -83,15 +83,23 @@ class SearchBarView: UIView {
     
     private func setupActions() {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        
+        searchBar.delegate = self
     }
     
     @objc private func searchButtonTapped() {
-        print(searchBar.text)
+        print(searchBar.text ?? print("error"))
         print(viewModel)
         guard let searchText = searchBar.text else { return }
         viewModel.handleSearchButtonTapped(searchText: searchText)
     }
 }
 
+extension SearchBarView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Вызываем замыкание onSearchTextChange при изменении текста в поисковой строке
+        onSearchTextChange?(searchText)
+    }
+}
 
 
