@@ -61,6 +61,9 @@ class ViewController: UIViewController {
             self?.searchBarViewModel.fetchCharacters(searchText: searchText) { _ in
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self?.searchBarView.searchBar.resignFirstResponder()
+                    }
                 }
             }
         }

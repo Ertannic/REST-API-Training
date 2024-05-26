@@ -11,7 +11,7 @@ import SnapKit
 class SearchBarView: UIView {
     
     // MARK: - Outlets
-    private let searchBar: UISearchBar = {
+    let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search"
         searchBar.searchBarStyle = .minimal
@@ -29,7 +29,7 @@ class SearchBarView: UIView {
         return searchBar
     }()
     
-    private let searchButton: UIButton = {
+    let searchButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         // Установка цвета фона кнопки в близкий к голубому синий
@@ -72,10 +72,6 @@ class SearchBarView: UIView {
             make.centerY.equalTo(searchBar) // Размещение кнопки по вертикали в центре textField
             make.height.width.equalTo(40) // Высота и ширина кнопки
         }
-        
-        // Добавляем красную обводку к кнопке
-        searchButton.layer.borderWidth = 1
-        searchButton.layer.borderColor = UIColor.red.cgColor
     }
     
     private func setupActions() {
@@ -87,7 +83,12 @@ class SearchBarView: UIView {
     @objc private func searchButtonTapped() {
         guard let searchText = searchBar.text else { return }
         onSearchButtonTapped?(searchText)
-        searchBar.resignFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
+        resignSearchBarFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
+    }
+    
+    // MARK: - Public Methods
+    func resignSearchBarFirstResponder() {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -95,9 +96,8 @@ extension SearchBarView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
         onSearchButtonTapped?(searchText)
-        searchBar.resignFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
+        resignSearchBarFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
     }
 }
-
 
 
