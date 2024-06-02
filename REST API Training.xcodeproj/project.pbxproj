@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5234252F2C03642900C2579D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5234252E2C03642900C2579D /* Image.swift */; };
+		523425312C0C7A5C00C2579D /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523425302C0C7A5C00C2579D /* CharacterTableViewCell.swift */; };
 		524B4AA82BF50305009DC176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AA72BF50305009DC176 /* AppDelegate.swift */; };
 		524B4AAA2BF50305009DC176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AA92BF50305009DC176 /* SceneDelegate.swift */; };
 		524B4AAC2BF50305009DC176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AAB2BF50305009DC176 /* ViewController.swift */; };
@@ -23,11 +24,11 @@
 		524B4AE32BFBAF4E009DC176 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE22BFBAF4E009DC176 /* Key.swift */; };
 		524B4AE52BFBB40C009DC176 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE42BFBB40C009DC176 /* APIResult.swift */; };
 		524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AE62BFBB431009DC176 /* CharacterService.swift */; };
-		524B4AEB2C0346FD009DC176 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5234252E2C03642900C2579D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		523425302C0C7A5C00C2579D /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		524B4AA42BF50305009DC176 /* REST API Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST API Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524B4AA72BF50305009DC176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524B4AA92BF50305009DC176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		524B4AE22BFBAF4E009DC176 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		524B4AE42BFBB40C009DC176 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		524B4AE62BFBB431009DC176 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
-		524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterTableViewCell.swift; path = ../../../../Desktop/CharacterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				524B4AD32BFA264C009DC176 /* SearchBarView.swift */,
-				524B4AEA2C0346FD009DC176 /* CharacterTableViewCell.swift */,
+				523425302C0C7A5C00C2579D /* CharacterTableViewCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -229,9 +229,9 @@
 				524B4AAC2BF50305009DC176 /* ViewController.swift in Sources */,
 				524B4AE32BFBAF4E009DC176 /* Key.swift in Sources */,
 				524B4AA82BF50305009DC176 /* AppDelegate.swift in Sources */,
+				523425312C0C7A5C00C2579D /* CharacterTableViewCell.swift in Sources */,
 				524B4AE72BFBB431009DC176 /* CharacterService.swift in Sources */,
 				524B4AD22BFA25D9009DC176 /* SearchBarViewModelDelegate.swift in Sources */,
-				524B4AEB2C0346FD009DC176 /* CharacterTableViewCell.swift in Sources */,
 				524B4AAA2BF50305009DC176 /* SceneDelegate.swift in Sources */,
 				5234252F2C03642900C2579D /* Image.swift in Sources */,
 				524B4ADA2BFA5C90009DC176 /* Character.swift in Sources */,

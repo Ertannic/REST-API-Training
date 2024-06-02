@@ -2,7 +2,7 @@
 //  CharacterTableViewCell.swift
 //  REST API Training
 //
-//  Created by Ertannic Saralay on 26.05.2024.
+//  Created by Ertannic Saralay on 02.06.2024.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class CharacterTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = .systemRed
         return label
     }()
     
@@ -25,7 +25,7 @@ class CharacterTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
-        label.textColor = .gray
+        label.textColor = .systemCyan
         return label
     }()
     
@@ -94,5 +94,4 @@ extension Dictionary where Key == String, Value == String {
         return "\(path).\(ext)"
     }
 }
-
 
