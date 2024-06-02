@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Marvel"
+        
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
         view.backgroundColor = .systemBackground
         
         setupViews()

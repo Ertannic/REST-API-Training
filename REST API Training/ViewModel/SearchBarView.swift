@@ -19,12 +19,25 @@ class SearchBarView: UIView {
         searchBar.barTintColor = .red
         // Установка цвета текста для поисковой строки в черный
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-            textField.textColor = .black
+            textField.textColor = .label
             // Установка цвета обводки и закругление для textField
-            textField.backgroundColor = .white
+            textField.backgroundColor = .systemBackground
             textField.layer.cornerRadius = 10
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.red.cgColor
+            
+            // Настройка цвета placeholder
+            let placeholderText = "Search"
+            let attributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor.systemGray // Изменение цвета текста placeholder на системный серый
+            ]
+            textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
+            
+            // Доступ к значку поиска (лупе) и его настройка
+            if let leftView = textField.leftView as? UIImageView {
+                leftView.tintColor = .systemGray // Изменение цвета значка лупы на системный серый
+                leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate) // Применение цвета через режим шаблона
+            }
         }
         return searchBar
     }()
@@ -99,5 +112,6 @@ extension SearchBarView: UISearchBarDelegate {
         resignSearchBarFirstResponder() // Скрываем клавиатуру после нажатия на кнопку поиска
     }
 }
+
 
 
